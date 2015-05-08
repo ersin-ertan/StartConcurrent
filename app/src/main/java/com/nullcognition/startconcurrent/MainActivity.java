@@ -2,9 +2,10 @@ package com.nullcognition.startconcurrent;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.nullcognition.startconcurrent.waitnotify.FiringSystem;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -22,10 +23,25 @@ public class MainActivity extends ActionBarActivity{
 //	  Log.e(getClass().getSimpleName(), Integer.toString(dnaSearchRegEx())); // all methods indicate 1, but there are two
 //	  Log.e(getClass().getSimpleName(), Integer.toString(dnaSearch()));
 //	  Log.e(getClass().getSimpleName(), Integer.toString(dnaSearchFor()));
-		dinningPhilo();
+//		dinningPhilo();
+		firingSystemDeploy();
+
+
 		int i = 0;
 
 
+	}
+
+	public void firingSystemDeploy(){
+		FiringSystem firingSystem = new FiringSystem();
+		firingSystem.startUnits();
+		try{
+			Thread.sleep(10_000);
+		} catch(InterruptedException e){
+			e.printStackTrace();
+		} finally{
+			firingSystem.switchPelter();
+		}
 	}
 
 	public void dinningPhilo(){
