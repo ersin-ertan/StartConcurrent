@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.nullcognition.startconcurrent.practice.P01;
 import com.nullcognition.startconcurrent.waitnotify.FiringSystem;
 
 import java.util.Scanner;
@@ -24,12 +25,18 @@ public class MainActivity extends ActionBarActivity{
 //	  Log.e(getClass().getSimpleName(), Integer.toString(dnaSearch()));
 //	  Log.e(getClass().getSimpleName(), Integer.toString(dnaSearchFor()));
 //		dinningPhilo();
-		firingSystemDeploy();
+//		firingSystemDeploy();
 
+		p01();
 
 		int i = 0;
 
 
+	}
+
+	private void p01(){
+		P01 p = new P01();
+		p.start();
 	}
 
 	public void firingSystemDeploy(){
